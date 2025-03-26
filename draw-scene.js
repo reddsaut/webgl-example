@@ -55,8 +55,6 @@ function drawScene(gl, programInfo, buffers, cubeRotation) {
         cubeRotation * 0.3, // amount to rotate in radians
         [1, 0, 0],
       ); // axis to rotate around (X)
-      
-
 
     // Tell WebGL how to pull out the positions from the position
     // buffer into the vertexPosition attribute.
@@ -66,7 +64,6 @@ function drawScene(gl, programInfo, buffers, cubeRotation) {
 
     // Tell WebGL which indices to use to index the vertices
     gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, buffers.indices);
-
 
     // Tell WebGL to use our program when drawing
     gl.useProgram(programInfo.program);
@@ -131,6 +128,5 @@ function setColorAttribute(gl, buffers, programInfo) {
     );
     gl.enableVertexAttribArray(programInfo.attribLocations.vertexColor);
 }
-
 
 export { drawScene };

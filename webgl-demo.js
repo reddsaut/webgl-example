@@ -4,7 +4,6 @@ import { drawScene } from "./draw-scene.js";
 let cubeRotation = 0.0;
 let deltaTime = 0;
 
-
 main();
 
 //
@@ -46,8 +45,6 @@ function main() {
       gl_FragColor = vColor;
     }
   `;
-
-
 
     // Set clear color to black, fully opaque
     gl.clearColor(0.0, 0.0, 0.0, 1.0);
@@ -92,9 +89,6 @@ function main() {
         requestAnimationFrame(render);
     }
     requestAnimationFrame(render);
-
-
-
 }
 
 //
@@ -121,7 +115,6 @@ function initShaderProgram(gl, vsSource, fsSource) {
         );
         return null;
     }
-
     return shaderProgram;
 }
 
@@ -149,7 +142,5 @@ function loadShader(gl, type, source) {
         gl.deleteShader(shader);
         return null;
     }
-
     return shader;
 }
-

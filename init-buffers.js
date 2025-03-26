@@ -10,8 +10,6 @@ function initBuffers(gl) {
         color: colorBuffer,
         indices: indexBuffer,
     };
-
-
 }
 
 function initPositionBuffer(gl) {
@@ -43,12 +41,10 @@ function initPositionBuffer(gl) {
         -1.0, -1.0, -1.0, -1.0, -1.0, 1.0, -1.0, 1.0, 1.0, -1.0, 1.0, -1.0,
     ];
 
-
     // Now pass the list of positions into WebGL to build the
     // shape. We do this by creating a Float32Array from the
     // JavaScript array, then use it to fill the current buffer.
     gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(positions), gl.STATIC_DRAW);
-
     return positionBuffer;
 }
 
@@ -63,7 +59,6 @@ function initColorBuffer(gl) {
     ];
 
     // Convert the array of colors into a table for all the vertices.
-
     var colors = [];
 
     for (var j = 0; j < faceColors.length; ++j) {
@@ -71,7 +66,6 @@ function initColorBuffer(gl) {
         // Repeat each color four times for the four vertices of the face
         colors = colors.concat(c, c, c, c);
     }
-
 
     const colorBuffer = gl.createBuffer();
     gl.bindBuffer(gl.ARRAY_BUFFER, colorBuffer);
@@ -128,7 +122,6 @@ function initIndexBuffer(gl) {
     ];
 
     // Now send the element array to GL
-
     gl.bufferData(
         gl.ELEMENT_ARRAY_BUFFER,
         new Uint16Array(indices),
@@ -137,7 +130,5 @@ function initIndexBuffer(gl) {
 
     return indexBuffer;
 }
-
-
 
 export { initBuffers };
